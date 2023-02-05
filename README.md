@@ -1,3 +1,3 @@
-# OAUTH2 example using MUI and react
+# OAUTH2 example using MUI and React
 
 
