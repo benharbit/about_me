@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import NavLink from './NavLink';
 import { navLinks } from './navLinks';
 import './Nav.css';
+
 
 const Nav = () => {
 	return (

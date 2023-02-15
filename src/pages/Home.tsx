@@ -3,7 +3,11 @@ import { useNav } from '../customHooks/useNav';
 import './Page.css';
 import { useOAuth2 } from "@tasoskakour/react-use-oauth2";
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+//import background1 from './back1.jpg';
+import background1 from './4907157.jpg';
+
 require('dotenv').config()
 const Home = () => {
 	const homeRef = useNav('Home');
@@ -36,24 +40,10 @@ const Home = () => {
 
 	// TODO send to server to get token
 
-	return (
-		<section ref={homeRef} id='homeContainer'>
-			<img
-				src='https://source.unsplash.com/random/600x600/?nature,water'
-				alt='unsplash-img'
-			/> <Box sx={{
-				display: 'flex',
-				flexDirection: 'column',
-			}}>
+	/*
+	OAUTHCODE
+	<Box>
 
-				<Box
-					sx={{
-						height: "20px",
-						width: "400px",
-						m: 10
-					}}>
-					The following is a demonstation which utilizes the use of OAuth2 and MUI material design to create a login page.
-				</Box>
 				<Box sx={{
 					display: 'flex',
 					flexDirection: 'row',
@@ -84,9 +74,60 @@ const Home = () => {
 					}
 					</Box>
 				</Box>
-			</Box>
-		</section>
 
+	*/
+	const techList = [
+		'EVM', 
+		'Solana', 
+		'React', 
+		'MUI', 
+		'Typescript/Javascript', 
+		'OAUTH2', 
+		'Nodejs', 
+		'Express', 
+		'MongoDB', 
+		'mySQL', 
+		'HardHat',
+		'Foundry', 
+		'NFTs', 
+		'ERC20'
+	]
+
+	return (
+			<>
+			<Box ref={homeRef} 
+			id = 'homeContainer'
+			sx={{ 
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				backgroundImage: `url(${background1})`,
+				backgroundSize: 'cover',
+				backgroundColor: 'rgba(255, 255, 0, 0.2))',
+				height: '100vh',
+				width: '100vw',
+
+			}}>
+				<Typography variant="h4" sx={{color: 'black', mt: 20}}>
+					About Me
+				</Typography>
+				<Box
+					sx={{
+						mt: 3,
+						height: "20px",
+						width: "600px",
+					}}>
+					<Typography  variant="h5">
+					
+					I am a full stack developer with a background in trading and derivatives.  I have done many projects involving 
+					{techList.map((tech, index) => <><Typography display="inline" variant="h5" color='red'> {tech}</Typography>,</>)}
+					 and more.   My github <a href="http://www.github.com/risingsun007"> http://www.github.com/risingsun007</a>.
+					Please check out my projects below and contact me if you have any questions.
+					</Typography>
+				  
+				</Box>
+			</Box>
+			</>
 	);
 };
 
