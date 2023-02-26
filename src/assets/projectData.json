@@ -10,7 +10,7 @@
 	"title": "NFT Marketplace on Ethereum", 
 	"description": "An Ethereum NFT marketplace with 1155 Solidity smart contract and Metamask integration",
 	"github": "https://github.com/risingsun007/solana-twitter-frontend-clone-reactjs",
-	"website": "https://solana-twitter-clone.herokuapp.com/",
+	"website": "https://nft-marketplace.herokuapp.com/",
 	"skills": ["Typescript", "React", "Ethereum", "Solidity", "ERC-1155", "MetaMask"]
 },
 {
