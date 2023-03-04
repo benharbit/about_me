@@ -10,6 +10,7 @@ import background1 from './4907157.jpg';
 
 require('dotenv').config()
 const Home = () => {
+	const [emailAddress, setEmailAddress] = React.useState<string>("");
 	const homeRef = useNav('Home');
 	const { data, loading, error, getAuth } = useOAuth2({
 		authorizeUrl: process.env.REACT_APP_AUTHORIZE_URL || "",
@@ -31,18 +32,28 @@ const Home = () => {
 		return <div>Loading...</div>;
 	}
 
+	const getEmail = async () => {
+		fetch('https://www.googleapis.com/oauth2/v2/userinfo?fields=email')
+	};
+
+	if(!emailAddress && sessionStorage.getItem("state")){
+
+
+	}
+
 	const doGetAuth = async () => {
 		console.log(`zzz: ${await getAuth()}`);
 		console.log(`data: ${data}`)
 	};
-	// sessionStorage.setItem("state","") // used for debugging
+	//sessionStorage.setItem("state","") // used for debugging
 	const googleState = sessionStorage.getItem("state")
 
 	// TODO send to server to get token
 
-	/*
-	OAUTHCODE
-	<Box>
+	
+	//OAUTHCODE
+	function getLogin(){
+	return(<Box>
 
 				<Box sx={{
 					display: 'flex',
@@ -74,8 +85,9 @@ const Home = () => {
 					}
 					</Box>
 				</Box>
+				</Box>)
 
-	*/
+	}
 	const techList = [
 		'EVM', 
 		'Solana', 
@@ -95,6 +107,7 @@ const Home = () => {
 
 	return (
 			<>
+			{getLogin()}
 			<Box ref={homeRef} 
 			id = 'homeContainer'
 			sx={{ 
