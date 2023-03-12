@@ -13,7 +13,7 @@ const Nav = () => {
 		redirectUri: process.env.REACT_APP_REDIRECT_URL || "",
 		scope: process.env.REACT_APP_SCOPE || "",
 		responseType: "code",
-		exchangeCodeForTokenServerURL: "https://www.saidiacapital.com/getToken",
+		exchangeCodeForTokenServerURL: process.env.REACT_APP_REDIRECT_URL || "",
 		exchangeCodeForTokenMethod: "POST",
 		onSuccess: (payload) => console.log("Success", payload),
 		onError: (error_) => console.log("Error", error_)
@@ -33,9 +33,8 @@ const Nav = () => {
 			{navLinks.map(({ navLinkId, scrollToId }, idx) => (
 				<NavLink key={idx} navLinkId={navLinkId} scrollToId={scrollToId} />
 			))}
-      <button className={data ? "nav_login noHover" : "nav_login"} onClick={oauth2Login}> {!data ?  "Login": "Logged In"}</button>
+      <button className={data ? "nav_login noHover" : "nav_login"} onClick={oauth2Login}> {!data ?  "Google OAUTH2 Login": "Logged In"}</button>  
 		</nav>
-    
     </>
 	);
 };
