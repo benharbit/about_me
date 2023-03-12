@@ -1,6 +1,5 @@
 {
-	"homepage": "https://shapirodaniel.github.io/single-page-nav",
-	"name": "single-page-nav",
+	"name": "about-me",
 	"version": "0.1.0",
 	"private": true,
 	"engines": {
@@ -9,6 +8,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.10.5",
 		"@emotion/styled": "^11.10.5",
+		"@fastify/cors": "^8.2.0",
 		"@mui/icons-material": "^5.11.0",
 		"@mui/material": "^5.11.7",
 		"@mui/system": "^5.11.7",
@@ -16,18 +16,22 @@
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
 		"@testing-library/user-event": "^12.1.10",
+		"@types/gapi": "^0.0.44",
 		"@types/jest": "^29.4.0",
 		"@types/node": "^18.11.18",
 		"@types/react": "^18.0.27",
 		"@types/react-dom": "^18.0.10",
+		"delay": "^5.0.0",
 		"dotenv": "^16.0.3",
+		"fastify": "^4.14.0",
 		"gh-pages": "^3.1.0",
+		"googleapis": "^112.0.0",
+		"node-fetch": "^2.6.9",
 		"react": "^18.0.2",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.8.0",
 		"react-scripts": "4.0.3",
 		"react-simple-oauth2-login": "^0.5.4",
-		"typescript": "^4.9.5",
 		"use-local-storage-state": "^18.1.2",
 		"web-vitals": "^1.0.1"
 	},
@@ -56,5 +60,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"typescript": "^4.9.5"
 	}
 }

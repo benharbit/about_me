@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNav } from '../customHooks/useNav';
 import './Page.css';
-import { useOAuth2 } from "@tasoskakour/react-use-oauth2";
+import  useOAuth2  from "../components/UseOauth2"; 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -12,13 +12,14 @@ require('dotenv').config()
 const Home = () => {
 	const [emailAddress, setEmailAddress] = React.useState<string>("");
 	const homeRef = useNav('Home');
+  const [numTries, setNumTries] = React.useState<number>(0);  
 	const { data, loading, error, getAuth } = useOAuth2({
 		authorizeUrl: process.env.REACT_APP_AUTHORIZE_URL || "",
 		clientId: process.env.REACT_APP_CLIENT_ID || "",
 		redirectUri: process.env.REACT_APP_REDIRECT_URL || "",
 		scope: process.env.REACT_APP_SCOPE || "",
 		responseType: "code",
-		exchangeCodeForTokenServerURL: "localhost:3001",
+		exchangeCodeForTokenServerURL: "https://www.saidiacapital.com/getToken",
 		exchangeCodeForTokenMethod: "POST",
 		onSuccess: (payload) => console.log("Success", payload),
 		onError: (error_) => console.log("Error", error_)
@@ -32,25 +33,6 @@ const Home = () => {
 		return <div>Loading...</div>;
 	}
 
-	const getEmail = async () => {
-		fetch('https://www.googleapis.com/oauth2/v2/userinfo?fields=email')
-	};
-
-	if(!emailAddress && sessionStorage.getItem("state")){
-
-
-	}
-
-	const doGetAuth = async () => {
-		console.log(`zzz: ${await getAuth()}`);
-		console.log(`data: ${data}`)
-	};
-	//sessionStorage.setItem("state","") // used for debugging
-	const googleState = sessionStorage.getItem("state")
-
-	// TODO send to server to get token
-
-	
 	//OAUTHCODE
 	function getLogin(){
 	return(<Box>
@@ -66,11 +48,8 @@ const Home = () => {
 					fontWeight: 'bold',
 					m: 2,
 				}}>
-					<Box>
-						<p>Login Using Your Google Account</p>
-					</Box>
-					<Box>{googleState ?
-						<p>Logged In {googleState}</p>
+					<Box>{data ? 
+						<p>Logged in</p>
 						:
 						<Button sx={{
 							width: '10rem',
@@ -79,8 +58,10 @@ const Home = () => {
 							fontWeight: 'bold'
 						}}
 							variant="contained"
-							onClick={doGetAuth}>
-							Google Login
+							onClick={getAuth}>
+              <Typography variant="body2">
+							  Google Auth2 Login
+              </Typography>
 						</Button>
 					}
 					</Box>
@@ -107,7 +88,6 @@ const Home = () => {
 
 	return (
 			<>
-			{getLogin()}
 			<Box ref={homeRef} 
 			id = 'homeContainer'
 			sx={{ 
