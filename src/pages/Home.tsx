@@ -107,14 +107,15 @@ const Home = () => {
 				<Box
 					sx={{
 						mt: 3,
-						height: "20px",
-						width: "600px",
+						width: '100%',
+						maxWidth: '800px',
+						p:2,
 					}}>
 					<Typography  variant="h5">
 					
 					I am a full stack developer with a background in trading and derivatives.  I have done many projects involving 
 					{techList.map((tech, index) => <><Typography display="inline" variant="h5" color='red'> {tech}</Typography>,</>)}
-					 and more.   My github <a href="http://www.github.com/risingsun007"> http://www.github.com/risingsun007</a>.
+					 and more.   <a href="http://www.github.com/benharbit"> My github </a>.
 					Please check out my projects below and contact me if you have any questions.
 					</Typography>
 				  

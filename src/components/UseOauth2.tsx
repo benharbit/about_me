@@ -299,7 +299,7 @@ const useOAuth2 = <TData = AuthTokenPayload>(props: Oauth2Props<TData>) => {
 		setUI,
 		setData,
 	]);
-  console.log(`datappp: ${data}`)
+  //console.log(`datappp: ${data}`)
 	return { data, loading, error, getAuth };
 };
 

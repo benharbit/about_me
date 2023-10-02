@@ -5,6 +5,16 @@ export const coursesData = [
     description: "Nesso Academy",
   },
   {
+    name: "Operating Systems - Three Easy Pieces",
+    link: "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+    description: "Operating Systems book for UW CSE 451",
+  },
+  {
+    name: "Odin Project",
+    link: "https://www.theodinproject.com/",
+    description: "Web Development Course",
+  },
+  {
     name: "Data Structure and Algorithm",
     link: "https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=sr_1_1?hvadid=570436991184&hvdev=c&hvlocphy=9010488&hvnetw=g&hvqmt=e&hvrand=8139555037474302019&hvtargid=kwd-341745437262&hydadcr=27888_14512639&keywords=grokking+algorithms+book&qid=1684499536&sr=8-1",
     description: "Grokking Algorithm by Aditya Bhargav"

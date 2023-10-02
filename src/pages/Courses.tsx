@@ -21,15 +21,16 @@ const Courses = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'start',
         backgroundImage: `url(${background2})`,
         backgroundColor: 'rgba(255, 255, 0, 0.2))',
-        height: '100vh',
-        width: '100vw',
+        minHeight: '100vh',
+        minWidth: '100vw',
 
       }}>
-      <Typography variant="h3" sx={{ mt: 10 }} >Courses/Books/Tutorials</Typography>
-
-      <Typography variant="h5">
+      
+        <Typography variant={window.screen.width > 500 ? "h3" : "h6" } sx={{ mt: 10}} >Courses/Books/Tutorials</Typography>
+       
         <List sx={{ width: '80%', maxWidth: 560, bgcolor: 'background.paper', borderRadius: '12px' }}>
           {coursesData.map((course) => {
             return (
@@ -44,7 +45,6 @@ const Courses = () => {
             )
           })}
         </List>
-      </Typography>
 
     </Box>
 

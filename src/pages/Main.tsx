@@ -1,14 +1,13 @@
-import React from 'react';
-import { Home, About, Contact, Courses } from '.';
-
+import React from "react";
+import { Home, Skills, Contact, Courses } from ".";
 
 const Main = () => (
-	<main>
-		<Home />
-		<About />
+  <main>
+    <Home />
+    <Skills />
     <Courses />
-		<Contact />
-	</main>
+    <Contact />
+  </main>
 );
 
 export default Main;
