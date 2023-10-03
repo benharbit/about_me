@@ -32,6 +32,7 @@
 		"react-router-dom": "^6.8.0",
 		"react-scripts": "4.0.3",
 		"react-simple-oauth2-login": "^0.5.4",
+		"serve": "^14.2.1",
 		"use-local-storage-state": "^18.1.2",
 		"web-vitals": "^1.0.1"
 	},
