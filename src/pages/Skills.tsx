@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNav } from "../customHooks/useNav";
 import "./Page.css";
-import background2 from "./background2.jpg";
+import background2 from "./background2.webp";
 import Box from "@mui/material/Box";
 import Accordian from "@mui/material/Accordion";
 import Typography from "@mui/material/Typography";

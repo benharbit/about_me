@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNav } from '../customHooks/useNav';
 import './Page.css';
-import background2 from './unsplash22.jpg';
+import background2 from './unsplash22.webp';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
