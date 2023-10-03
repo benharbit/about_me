@@ -11,7 +11,7 @@ import Link from '@mui/material/Link';
 import { coursesData } from './courseData'
 
 
-
+// Courses I have taken
 const Courses = () => {
   const courseRef = useNav('courses');
   return (
