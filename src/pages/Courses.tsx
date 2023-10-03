@@ -26,10 +26,11 @@ const Courses = () => {
         backgroundColor: 'rgba(255, 255, 0, 0.2))',
         minHeight: '100vh',
         minWidth: '100vw',
+        p: 2,
 
       }}>
       
-        <Typography variant={window.screen.width > 500 ? "h3" : "h6" } sx={{ mt: 10}} >Courses/Books/Tutorials</Typography>
+        <Typography variant={window.screen.width > 500 ? "h3" : "h6" } sx={{ mt: window.screen.width > 600 ?  10 : 0, mb: 2}} >Courses/Books/Tutorials</Typography>
        
         <List sx={{ width: '80%', maxWidth: 560, bgcolor: 'background.paper', borderRadius: '12px' }}>
           {coursesData.map((course) => {

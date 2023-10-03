@@ -3,7 +3,7 @@ nav {
 	width: 100%;
 	position: sticky;
 	z-index: 10;
-  top: 0;
+  	top: 0;
 	padding: 1.2em 0;
 	color: rgb(241, 24, 24);
 	background-color: rgb(0, 0, 0, 0.1);
@@ -12,8 +12,16 @@ nav {
 	backdrop-filter: blur(10px);
 }
 
-nav span {
+nav.mobile {
+	font-size: 14px;
+}
+
+nav.desktop {
 	font-size: 25px;
+
+}
+
+nav span {
 	font-family: 'Roboto', sans-serif;
 	border-bottom: 1px solid transparent;
 	transition: border-bottom 0.2s ease;
@@ -38,6 +46,8 @@ nav span.activeClass i {
 nav span.activeClass {
 	border-bottom-color: var(--lightAccent);
 }
+
+
 
 .nav_login {
   

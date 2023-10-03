@@ -16,57 +16,57 @@ const myData = require("../assets/projectData.json");
 console.log(`screen width: ${window.screen.width}`);
 
 const Skills = () => {
-	
   const [currentSkill, setCurrentSkill] = React.useState("All");
   const [uniqueSkills, setUniqueSkills] = React.useState<any[]>([]);
   const [temp, setTemp] = React.useState<any>("");
   const aboutRef = useNav("Skills");
-  console.log(`current skill: ${currentSkill}`)
+  console.log(`current skill: ${currentSkill}`);
 
   function AccordianSkills() {
     return (
-		<Box
-		sx={{ display: "flex", flexDirection: "rows", flexWrap: "wrap" }}
-	  >
-		{uniqueSkills.map((skill) => {
-		  return (
-			<button
-			  className={
-				skill === currentSkill ? "buttonActive" : "buttonClass1"
-			  }
-			  onClick={setSkills}
-			  value={skill}
-			>
-			  {skill}
-			</button>
-		  );
-		})}
-	  </Box>
-      
+      <Box sx={{ display: "flex", flexDirection: "rows", flexWrap: "wrap" }}>
+        {uniqueSkills.map((skill) => {
+          return (
+            <button
+              className={
+                skill === currentSkill ? "buttonActive" : "buttonClass1"
+              }
+              onClick={setSkills}
+              value={skill}
+            >
+              {skill}
+            </button>
+          );
+        })}
+      </Box>
     );
   }
 
-  function DropDownBox(){
-	return (
-		<Select
-		labelId="selectSkill"
-		id="selectSkillId"
-		value={currentSkill}
-		label={currentSkill}
-		onChange={(e) => setSkills(e)}
-		style={{width: '90%', minWidth: "100px"}}
-	  >	
-		 { uniqueSkills.map(skill => (<MenuItem value={skill} onClick={setSkills}> {skill}</MenuItem>))}
-	  </Select>
-	)
+  function DropDownBox() {
+    return (
+      <Select
+        labelId="selectSkill"
+        id="selectSkillId"
+        value={currentSkill}
+        label={currentSkill}
+        onChange={(e) => setSkills(e)}
+        style={{ width: "90%", minWidth: "100px" }}
+      >
+        {uniqueSkills.map((skill) => (
+          <MenuItem value={skill} onClick={setSkills}>
+            {" "}
+            {skill}
+          </MenuItem>
+        ))}
+      </Select>
+    );
   }
-
 
   const setSkills = (e: any) => {
     console.log(`skill: ${e?.target}`);
-	for(let x in e.target){
-		console.log(`fff: ${JSON.stringify(x)} ${(e.target[x])}}`)
-	}
+    for (let x in e.target) {
+      console.log(`fff: ${JSON.stringify(x)} ${e.target[x]}}`);
+    }
     setCurrentSkill(e.target.value);
   };
   useEffect(() => {
@@ -95,10 +95,14 @@ const Skills = () => {
         backgroundColor: "rgba(255, 255, 0, 0.2))",
         minHeight: "100vh",
         width: "100vw",
-		p: 2,
+        p: 2,
       }}
     >
-      <Typography variant="h3" sx={{ mt: 10 }}>
+      <Typography
+	  	textAlign="center"
+        variant={window.screen.width > 600 ? "h3" : "h4"}
+        sx={{ mb: 3, mt: window.screen.width > 600 ? 10 : 0 }}
+      >
         Projects Completed
       </Typography>
       <Box
@@ -113,7 +117,7 @@ const Skills = () => {
             p: "10px",
             mb: "10px",
             width: "50%",
-			minWidth: "250px",
+            minWidth: "250px",
           }}
         >
           <Typography
@@ -130,7 +134,7 @@ const Skills = () => {
           >
             Select A Skill
           </Typography>
-         {window.screen.width > 500 ? <AccordianSkills/> : <DropDownBox/>}
+          {window.screen.width > 500 ? <AccordianSkills /> : <DropDownBox />}
         </Box>
 
         {myData
@@ -142,13 +146,19 @@ const Skills = () => {
           )
           .map((project: any) => {
             return (
-              <Accordian sx={{ borderRadius: "10px", width: "40%", minWidth: "250px", overflow: "auto"}}>
+              <Accordian
+                sx={{
+                  borderRadius: "10px",
+                  width: "40%",
+                  minWidth: "250px",
+                  overflow: "auto",
+                }}
+              >
                 <AccordionSummary
                   sx={{ borderRadius: "4px" }}
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1bh-content"
                   id="panel1bh-header"
-
                 >
                   <Typography variant="h6">{project.title}</Typography>
                 </AccordionSummary>
